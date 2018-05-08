@@ -1,24 +1,23 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>后台管理系统</title>
-<style>
-body
-{
-  scrollbar-base-color:#C0D586;
-  scrollbar-arrow-color:#FFFFFF;
-  scrollbar-shadow-color:DEEFC6;
-}
-</style>
+<title>网站后台管理系统</title>
+<link rel="shortcut icon" href="images/favicon.ico" />
+<link href="css/css.css" type="text/css" rel="stylesheet" />
 </head>
-<frameset rows="50,*" cols="*" frameborder="no" border="0" framespacing="0">
-  <frame src="top.html" name="topFrame" scrolling="no">
-  <frameset cols="225,*" name="btFrame" frameborder="NO" border="0" framespacing="0">
-    <frame src="left.html" noresize name="menu" scrolling="yes">
-    <frame src="hy_list.html" class="frame_r" noresize name="main" scrolling="yes">
-  </frameset>
-</frameset>
-<noframes>
-<body>您的浏览器不支持框架！</body>
-</noframes>
+<!--框架样式-->
+<frameset rows="95,*,30" cols="*" frameborder="no" border="0" framespacing="0">
+<!--top样式-->
+	<frame src="top.html" name="topframe" scrolling="no" noresize id="topframe" title="topframe" />
+<!--contact样式-->
+	<frameset id="attachucp" framespacing="0" border="0" frameborder="no" cols="194,12,*" rows="*">
+		<frame scrolling="auto" noresize="" frameborder="no" name="leftFrame" src="left.html"></frame>
+		<frame id="leftbar" scrolling="no" noresize="" name="switchFrame" src="swich.html"></frame>
+		<frame scrolling="auto" noresize="" border="0" name="mainFrame" src="main.html"></frame>
+	</frameset>
+<!--bottom样式-->
+	<frame src="bottom.html" name="bottomFrame" scrolling="No" noresize="noresize" id="bottomFrame" title="bottomFrame" />
+</frameset><noframes></noframes>
+<!--不可以删除-->
 </html>
