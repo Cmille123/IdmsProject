@@ -10,4 +10,5 @@ package com.tianying.idms.service;
  * Description:
  */
 public interface Test {
+
 }
