@@ -10,4 +10,16 @@ package com.tianying.idms.pojo.db;
  * Description:
  */
 public class User {
+    /**
+     * 用户编号
+     */
+    private Integer u_id;
+
+    public Integer getU_id() {
+        return u_id;
+    }
+
+    public void setU_id(Integer u_id) {
+        this.u_id = u_id;
+    }
 }
