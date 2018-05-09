@@ -29,8 +29,9 @@ public class UserController {
     public ModelAndView login(HttpServletRequest req, HttpServletResponse resp,
                               @RequestParam(required = true, value = "username") String username,
                               @RequestParam(required = true, value = "userpwd") String userpwd){
-        ModelAndView modelAndView = null;
-
+        ModelAndView modelAndView = new ModelAndView("/index.html");
+        userService.login();
+        System.out.print(username+"  "+userpwd);
         return modelAndView;
     }
 }

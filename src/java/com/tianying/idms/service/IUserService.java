@@ -1,5 +1,7 @@
 package com.tianying.idms.service;
 
+import com.tianying.idms.pojo.db.User;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -10,4 +12,6 @@ package com.tianying.idms.service;
  * Description:
  */
 public interface IUserService {
+
+    User login();
 }
