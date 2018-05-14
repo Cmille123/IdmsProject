@@ -25,13 +25,13 @@ public class UserController {
     @Resource(name="userService")
     private IUserService userService;
 
-    @RequestMapping("/login")
+    @RequestMapping("/login.do")
     public ModelAndView login(HttpServletRequest req, HttpServletResponse resp,
                               @RequestParam(required = true, value = "username") String username,
-                              @RequestParam(required = true, value = "userpwd") String userpwd){
-        ModelAndView modelAndView = new ModelAndView("/index.html");
+                              @RequestParam(required = true, value = "password") String password){
+        ModelAndView modelAndView = new ModelAndView("index.html");
         userService.login();
-        System.out.print(username+"  "+userpwd);
+        System.out.print(username+"  "+password);
         return modelAndView;
     }
 }

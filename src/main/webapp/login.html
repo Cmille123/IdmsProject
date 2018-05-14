@@ -17,16 +17,18 @@
             var form = document.getElementById("form1");
             if(Trim(username.value)==null || Trim(username.value)===""){
                 alert("用户名不能为空！");
+                return false;
             }else if(Trim(password.value)==null || Trim(password.value)===""){
                 alert("密码不能为空！");
+                return false;
             }else{
-                form.submit();
+                return true;
             }
         }
     </script>
 </head>
 <body>
-    <form id="form1" runat="server" action="" method="post">
+    <form id="form1" action="login.do" method="post" onsubmit="return login()">
     <div class="Main">
         <ul>
             <li class="top"></li>
@@ -49,7 +51,7 @@
             <li class="topE"></li>
             <li class="middle_A"></li>
             <li class="middle_B"></li>
-            <li class="middle_C"><span class="btn"><input name="" onclick="login()" type="image" src="images/login/btnlogin.gif" /></span></li>
+            <li class="middle_C"><span class="btn"><input name="" type="image" src="images/login/btnlogin.gif" /></span></li>
             <li class="middle_D"></li>
             <li class="bottom_A"></li>
             <li class="bottom_B">网站后台管理系统&nbsp;&nbsp;www.php.com</li>
