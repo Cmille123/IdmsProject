@@ -15,6 +15,11 @@ import java.util.List;
  * Description:
  */
 public interface IUserService {
-
-    List<User> login(SelectUser user);
+    /**
+     * 登录
+     * @param user 用户信息
+     * @return 用户信息
+     */
+    User login(SelectUser user);
+    
 }

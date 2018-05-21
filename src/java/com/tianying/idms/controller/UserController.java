@@ -30,22 +30,21 @@ public class UserController {
     @Resource(name="userService")
     private IUserService userService;
 
+
+
     @RequestMapping("/login.do")
     public ModelAndView login(HttpServletRequest req, HttpServletResponse resp,
                               @RequestParam(required = true, value = "username") String username,
                               @RequestParam(required = true, value = "password") String password){
-        String url = null;
-        //当前登录用户
-        User user = null;
         //查询用户的条件
         SelectUser selectUser = new SelectUser();
         selectUser.setU_username(username);
         selectUser.setU_password(password);
+        //当前登录用户
+        User user = userService.login(selectUser);
         //查询用户是否存在
-        List<User> users = userService.login(selectUser);
-        if (users!=null && users.size()>0){
-            user = users.get(0);
-            url = "index.html";
+        if (user!=null){
+            req.getSession().setAttribute("loginUser",user);
         }else{
             try {
                 req.setCharacterEncoding("utf-8");
@@ -57,11 +56,9 @@ public class UserController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            url = "login.html";
         }
         System.out.println(username+"  "+password);
         System.out.println(user);
-        System.out.println(url);
-        return new ModelAndView(url);
+        return new ModelAndView("redirect:index.html");
     }
 }

@@ -37,6 +37,18 @@ public class User {
      * 联系方式
      */
     private String u_tell;
+    /**
+     * 部门id
+     */
+    private Integer d_id;
+
+    public Integer getD_id() {
+        return d_id;
+    }
+
+    public void setD_id(Integer d_id) {
+        this.d_id = d_id;
+    }
 
     public Integer getU_id() {
         return u_id;
@@ -91,6 +103,7 @@ public class User {
                 ", u_password='" + u_password + '\'' +
                 ", u_createTime=" + u_createTime +
                 ", u_tell='" + u_tell + '\'' +
+                ", d_id='" + d_id + '\'' +
                 '}';
     }
 }
