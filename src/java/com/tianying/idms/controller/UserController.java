@@ -61,4 +61,14 @@ public class UserController {
         System.out.println(user);
         return new ModelAndView("redirect:index.html");
     }
+
+    /**
+     * 登出
+     * @return 返回页面
+     */
+    @RequestMapping("/out.do")
+    public ModelAndView out(HttpServletRequest req, HttpServletResponse resp){
+        req.getSession().removeAttribute("loginUser");
+        return new ModelAndView("redirect:login.html");
+    }
 }
