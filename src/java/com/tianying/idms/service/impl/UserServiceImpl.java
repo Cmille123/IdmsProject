@@ -2,11 +2,13 @@ package com.tianying.idms.service.impl;
 
 import com.tianying.idms.dao.IUserDao;
 import com.tianying.idms.pojo.db.User;
+import com.tianying.idms.pojo.select.SelectUser;
 import com.tianying.idms.service.IUserService;
 import org.springframework.stereotype.Service;
 
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,7 +26,7 @@ public class UserServiceImpl implements IUserService{
     private IUserDao userDao;
 
     @Override
-    public User login() {
-        return null;
+    public List<User> login(SelectUser user) {
+        return userDao.findUser(user);
     }
 }

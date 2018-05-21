@@ -10,6 +10,12 @@
             <if test="u_id != null and u_id != 0">
                 AND u_id = #{u_id}
             </if>
+            <if test="u_username != null and u_username != ''">
+                AND u_username = #{u_username}
+            </if>
+            <if test="u_password != null and u_password != ''">
+                AND u_password = #{u_password}
+            </if>
         </where>
     </select>
 </mapper>

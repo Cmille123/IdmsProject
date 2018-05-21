@@ -81,4 +81,16 @@ public class User {
     public void setU_tell(String u_tell) {
         this.u_tell = u_tell;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "u_id=" + u_id +
+                ", u_name='" + u_name + '\'' +
+                ", u_username='" + u_username + '\'' +
+                ", u_password='" + u_password + '\'' +
+                ", u_createTime=" + u_createTime +
+                ", u_tell='" + u_tell + '\'' +
+                '}';
+    }
 }

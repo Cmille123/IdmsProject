@@ -1,6 +1,9 @@
 package com.tianying.idms.service;
 
 import com.tianying.idms.pojo.db.User;
+import com.tianying.idms.pojo.select.SelectUser;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,5 +16,5 @@ import com.tianying.idms.pojo.db.User;
  */
 public interface IUserService {
 
-    User login();
+    List<User> login(SelectUser user);
 }
