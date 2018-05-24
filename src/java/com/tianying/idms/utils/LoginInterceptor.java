@@ -25,7 +25,7 @@ public class LoginInterceptor extends OncePerRequestFilter {
         // 不过滤的url
         String[] notFilter = new String[] { "login.html","login.do"};
         // 需过滤的url
-        String[] fiter = new String[]{".html",".jsp",".do"};
+        String[] filter = new String[]{".html",".jsp",".do"};
         // 请求的uri
         String uri = req.getRequestURI();
         // 是否过滤（页面）
@@ -39,7 +39,7 @@ public class LoginInterceptor extends OncePerRequestFilter {
                 break;
             }
         }
-        for(String s: fiter){
+        for(String s: filter){
             if (uri.contains(s)) {
                 // 如果uri中包含过滤的uri，则进行过滤
                 doFilters = true;
