@@ -15,7 +15,6 @@ import java.util.List;
  * Description:
  */
 public class UserUtil {
-
     /**
      * 根据用户信息查询所具有的所有权限
      * @param user 用户信息
@@ -25,6 +24,4 @@ public class UserUtil {
 
         return null;
     }
-
-
 }
