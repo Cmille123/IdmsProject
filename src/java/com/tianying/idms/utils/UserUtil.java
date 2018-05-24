@@ -1,6 +1,5 @@
 package com.tianying.idms.utils;
 
-import com.tianying.idms.pojo.db.Dept;
 import com.tianying.idms.pojo.db.Power;
 import com.tianying.idms.pojo.db.User;
 

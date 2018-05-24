@@ -30,8 +30,7 @@ public class UserController {
     @Resource(name="userService")
     private IUserService userService;
 
-
-
+    
     @RequestMapping("/login.do")
     public ModelAndView login(HttpServletRequest req, HttpServletResponse resp,
                               @RequestParam(required = true, value = "username") String username,
@@ -57,7 +56,6 @@ public class UserController {
                 e.printStackTrace();
             }
         }
-        System.out.println(username+"  "+password);
         System.out.println(user);
         return new ModelAndView("redirect:index.html");
     }
@@ -67,7 +65,7 @@ public class UserController {
      * @return 返回页面
      */
     @RequestMapping("/out.do")
-    public ModelAndView out(HttpServletRequest req, HttpServletResponse resp){
+    public ModelAndView out(HttpServletRequest req){
         req.getSession().removeAttribute("loginUser");
         return new ModelAndView("redirect:login.html");
     }
