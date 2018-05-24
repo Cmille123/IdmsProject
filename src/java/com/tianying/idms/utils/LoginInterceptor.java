@@ -57,12 +57,12 @@ public class LoginInterceptor extends OncePerRequestFilter {
                 resp.setCharacterEncoding("UTF-8");
                 resp.setContentType("text/html;charset=utf-8");
                 PrintWriter out = resp.getWriter();
-                StringBuilder builder = new StringBuilder();
-                builder.append("<script type=\"text/javascript\">");
-                builder.append("alert('您好,请先登录!');");
-                builder.append("window.parent.frames.location.href='login.html';");
-                builder.append("</script>");
-                out.print(builder.toString());
+                out.print("<script type=\"text/javascript\">" +
+                        "alert('您好,请先登录!');" +
+                        "window.parent.frames.location.href='login.html';" +
+                        "</script>");
+                out.flush();
+                out.close();
             } else {
                 // 如果session中存在登录者实体，则继续
                 filterChain.doFilter(req, resp);
