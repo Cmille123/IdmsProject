@@ -3,6 +3,7 @@ package com.tianying.idms.controller;
 import com.tianying.idms.pojo.db.User;
 import com.tianying.idms.pojo.select.SelectUser;
 import com.tianying.idms.service.IUserService;
+import com.tianying.idms.utils.PageUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -69,5 +71,21 @@ public class UserController {
         req.getSession().removeAttribute("loginUser");
         return new ModelAndView("redirect:login.html");
     }
+
+    @RequestMapping("/userList.do")
+    public ModelAndView list(HttpServletRequest req,@RequestParam(required = true, value = "page") int page,
+                                 @RequestParam(required = true, value = "pageSize") int pageSize){
+        List list = userService.findAllUser(new SelectUser());
+        List pageContext = PageUtil.getPageContext(page,pageSize,list);
+        req.setAttribute("uList",pageContext);
+        req.setAttribute("page",page);
+        req.setAttribute("pageCount",PageUtil.getPageCount(pageSize,list));
+        req.setAttribute("dataCount",list.size());
+        return new ModelAndView("main_list.jsp");
+    }
+
+
+
+
 
 }

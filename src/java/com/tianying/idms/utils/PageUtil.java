@@ -18,7 +18,7 @@ public class PageUtil {
      * @return 总页数
      */
     public static int getPageCount(int pageSize,List list){
-        int dataCount = list.size()+1;
+        int dataCount = list.size();
         return dataCount % pageSize == 0 ? dataCount / pageSize : dataCount / pageSize + 1;
     }
 

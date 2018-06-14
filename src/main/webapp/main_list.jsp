@@ -1,3 +1,6 @@
+<%@ page import="com.tianying.idms.pojo.db.User" %>
+<%@ page import="java.util.List" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%--
   Created by IntelliJ IDEA.
   User: 中国天楹
@@ -34,6 +37,11 @@
         td.fenye{ padding:10px 0 0 0; text-align:right;}
         .bggray{ background:#f9f9f9}
     </style>
+    <script type="text/javascript">
+        function paging(page) {
+            location.href="userList.do?page="+page+"&pageSize=2";
+        }
+    </script>
 </head>
 <body>
 <!--main_top-->
@@ -70,20 +78,38 @@
                     <th align="center" valign="middle" class="borderright">联系方式</th>
                     <th align="center" valign="middle">操作</th>
                 </tr>
+                <%
+                    List<User> list = (List<User>) request.getAttribute("uList");
+                    if(list!=null){
+                        for(User u:list){
+                %>
                 <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-                    <td align="center" valign="middle" class="borderright borderbottom">1</td>
-                    <td align="center" valign="middle" class="borderright borderbottom">admin</td>
-                    <td align="center" valign="middle" class="borderright borderbottom">创始人</td>
-                    <td align="center" valign="middle" class="borderright borderbottom">******</td>
-                    <td align="center" valign="middle" class="borderright borderbottom">已锁定</td>
-                    <td align="center" valign="middle" class="borderright borderbottom">2013-04-26 11:00:59</td>
+                    <td align="center" valign="middle" class="borderright borderbottom"><%=u.getU_id()%></td>
+                    <td align="center" valign="middle" class="borderright borderbottom"><%=u.getU_name()%></td>
+                    <td align="center" valign="middle" class="borderright borderbottom"><%=u.getU_username()%></td>
+                    <td align="center" valign="middle" class="borderright borderbottom"><%=u.getU_password()%></td>
+                    <td align="center" valign="middle" class="borderright borderbottom"><%=u.getU_createTime()%></td>
+                    <td align="center" valign="middle" class="borderright borderbottom"><%=u.getU_tell()%></td>
                     <td align="center" valign="middle" class="borderbottom"><a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">编辑</a><span class="gray">&nbsp;|&nbsp;</span><a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">删除</a></td>
                 </tr>
+                <%
+                        }
+                    }
+                %>
             </table>
         </td>
     </tr>
     <tr>
-        <td align="left" valign="top" class="fenye">11 条数据 1/1 页&nbsp;&nbsp;<a href="#" target="mainFrame" onFocus="this.blur()">首页</a>&nbsp;&nbsp;<a href="#" target="mainFrame" onFocus="this.blur()">上一页</a>&nbsp;&nbsp;<a href="#" target="mainFrame" onFocus="this.blur()">下一页</a>&nbsp;&nbsp;<a href="#" target="mainFrame" onFocus="this.blur()">尾页</a></td>
+        <td align="left" valign="top" class="fenye">${dataCount} 条数据 ${page}/${pageCount} 页&nbsp;&nbsp;
+            <c:if test="${page!=1}">
+            <a href="javascript:paging(1)" target="mainFrame" onFocus="this.blur()">首页</a>&nbsp;&nbsp;
+            <a href="javascript:paging(${page-1})" target="mainFrame" onFocus="this.blur()">上一页</a>&nbsp;&nbsp;
+            </c:if>
+            <c:if test="${page!=pageCount}">
+            <a href="javascript:paging(${page+1})" target="mainFrame" onFocus="this.blur()">下一页</a>&nbsp;&nbsp;
+            <a href="javascript:paging(${pageCount})" target="mainFrame" onFocus="this.blur()">尾页</a>
+            </c:if>
+        </td>
     </tr>
 </table>
 </body>

@@ -21,5 +21,12 @@ public interface IUserService {
      * @return 用户信息
      */
     User login(SelectUser user);
+
+    /**
+     * 获取所以用户信息集合
+     * @param user 用户信息
+     * @return 用户集合
+     */
+    List<User> findAllUser(SelectUser user);
     
 }

@@ -13,6 +13,9 @@
 		myMenu = new SDMenu("my_menu");
 		myMenu.init();
 	};
+    function userPage(page) {
+        parent.mainFrame.location.href="userList.do?page="+page+"&pageSize=2";
+    }
 	// ]]>
 </script>
 <style type=text/css>
@@ -29,7 +32,7 @@ body{overflow-x:hidden; background:url(images/main/leftbg.jpg) left top repeat-y
       <div class="collapsed">
         <span>用户管理</span>
         <a href="main.html" target="mainFrame" onFocus="this.blur()">后台首页</a>
-        <a href="main_list.jsp" target="mainFrame" onFocus="this.blur()">列表页</a>
+        <a href="javascript:userPage(1)" target="mainFrame" onFocus="this.blur()">列表页</a>
         <a href="main_info.html" target="mainFrame" onFocus="this.blur()">列表详细页</a>
         <a href="main_message.html" target="mainFrame" onFocus="this.blur()">留言页</a>
         <a href="main_menu.html" target="mainFrame" onFocus="this.blur()">栏目管理</a>

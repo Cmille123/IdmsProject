@@ -30,4 +30,9 @@ public class UserServiceImpl implements IUserService{
         List<User> list = userDao.findUser(user);
         return list.size()>0?list.get(0):null;
     }
+
+    @Override
+    public List<User> findAllUser(SelectUser user) {
+        return userDao.findUser(user);
+    }
 }
