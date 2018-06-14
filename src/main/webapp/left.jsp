@@ -29,7 +29,7 @@ body{overflow-x:hidden; background:url(images/main/leftbg.jpg) left top repeat-y
       <div class="collapsed">
         <span>系统设置</span>
         <a href="main.html" target="mainFrame" onFocus="this.blur()">后台首页</a>
-        <a href="main_list.html" target="mainFrame" onFocus="this.blur()">列表页</a>
+        <a href="main_list.jsp" target="mainFrame" onFocus="this.blur()">列表页</a>
         <a href="main_info.html" target="mainFrame" onFocus="this.blur()">列表详细页</a>
         <a href="main_message.html" target="mainFrame" onFocus="this.blur()">留言页</a>
         <a href="main_menu.html" target="mainFrame" onFocus="this.blur()">栏目管理</a>

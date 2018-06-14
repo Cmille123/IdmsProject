@@ -3,7 +3,9 @@ package com.tianying.idms.controller;
 import com.tianying.idms.pojo.db.User;
 import com.tianying.idms.pojo.select.SelectUser;
 import com.tianying.idms.service.IUserService;
+import com.tianying.idms.utils.PageUtil;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -68,5 +70,11 @@ public class UserController {
     public ModelAndView out(HttpServletRequest req){
         req.getSession().removeAttribute("loginUser");
         return new ModelAndView("redirect:login.html");
+    }
+
+    public String list(Model model, PageUtil pageUtil){
+
+
+        return null;
     }
 }
