@@ -23,7 +23,7 @@ public class LoginInterceptor extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest req, HttpServletResponse resp, FilterChain filterChain) throws ServletException, IOException {
         // 不过滤的url
-        String[] notFilter = new String[] { "login.html","login.do"};
+        String[] notFilter = new String[] { "login.html","login.do","roleList.do"};
         // 需过滤的url
         String[] filter = new String[]{".html",".jsp",".do"};
         // 请求的uri

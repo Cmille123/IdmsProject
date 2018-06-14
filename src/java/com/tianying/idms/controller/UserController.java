@@ -3,7 +3,6 @@ package com.tianying.idms.controller;
 import com.tianying.idms.pojo.db.User;
 import com.tianying.idms.pojo.select.SelectUser;
 import com.tianying.idms.service.IUserService;
-import com.tianying.idms.utils.PageUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -72,9 +70,4 @@ public class UserController {
         return new ModelAndView("redirect:login.html");
     }
 
-    public String list(Model model, PageUtil pageUtil){
-
-
-        return null;
-    }
 }
