@@ -28,5 +28,31 @@ public interface IUserService {
      * @return 用户集合
      */
     List<User> findAllUser(SelectUser user);
-    
+
+    /**
+     * 添加用户
+     * @param user 用户对象
+     * @return 受影响的行数
+     */
+    boolean addUser(User user);
+    /**
+     * 修改用户
+     * @param user 用户对象
+     * @return 受影响的行数
+     */
+    boolean updateUser(User user);
+
+    /**
+     * 批量删除用户
+     * @param selectUser ids存储用户id数组
+     * @return 受影响的行数
+     */
+    boolean deleteUsers(SelectUser selectUser);
+
+    /**
+     * 删除单个用户
+     * @param selectUser u_id存储用户id
+     * @return 受影响的行数
+     */
+    boolean deleteUser(SelectUser selectUser);
 }

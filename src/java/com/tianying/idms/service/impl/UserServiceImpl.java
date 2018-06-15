@@ -35,4 +35,24 @@ public class UserServiceImpl implements IUserService{
     public List<User> findAllUser(SelectUser user) {
         return userDao.findUser(user);
     }
+
+    @Override
+    public boolean addUser(User user) {
+        return userDao.addUser(user)>0;
+    }
+
+    @Override
+    public boolean updateUser(User user) {
+        return userDao.updateUser(user)>0;
+    }
+
+    @Override
+    public boolean deleteUsers(SelectUser selectUser) {
+        return userDao.deleteUsers(selectUser)>0;
+    }
+
+    @Override
+    public boolean deleteUser(SelectUser selectUser) {
+        return userDao.deleteUser(selectUser)>0;
+    }
 }

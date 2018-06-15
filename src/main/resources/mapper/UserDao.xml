@@ -18,4 +18,35 @@
             </if>
         </where>
     </select>
+    <update id="updateUser" parameterType="com.tianying.idms.pojo.select.SelectUser">
+        UPDATE t_user
+        <set>
+            <if test="u_name!=null and u_name!=''">
+                u_name = #{u_name}
+            </if>
+            <if test="u_username!=null and u_username!=''">
+                u_username = #{u_username}
+            </if>
+            <if test="u_password!=null and u_password!=''">
+                u_password = #{u_password}
+            </if>
+            <if test="u_tell!=null and u_tell!=''">
+                u_tell = #{u_tell}
+            </if>
+            <if test="d_id!=null and d_id!=0">
+                d_id = #{d_id}
+            </if>
+        </set>
+        <where>
+            <if test="u_id!=null and u_id!=0">
+                u_id = #{u_id}
+            </if>
+        </where>
+    </update>
+    <delete id="deleteUser" parameterType="com.tianying.idms.pojo.select.SelectUser">
+        DELETE FROM t_user WHERE u_id IN
+        <foreach item="ids" collection="array" open="(" separator="," close=")">
+            #{ids}
+        </foreach>
+    </delete>
 </mapper>

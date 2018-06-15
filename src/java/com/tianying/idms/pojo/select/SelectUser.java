@@ -33,6 +33,11 @@ public class SelectUser {
      */
     private Date u_createTime;
     /**
+     * 用户id数组
+
+     */
+    private Integer[] ids;
+    /**
      * 联系方式
      */
     private String u_tell;
@@ -83,5 +88,12 @@ public class SelectUser {
 
     public void setU_tell(String u_tell) {
         this.u_tell = u_tell;
+    }
+    public Integer[] getIds() {
+        return ids;
+    }
+
+    public void setIds(Integer[] ids) {
+        this.ids = ids;
     }
 }
