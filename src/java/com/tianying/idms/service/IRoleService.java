@@ -20,5 +20,5 @@ public interface IRoleService {
      * @param role 角色信息
      * @return 角色集合
      */
-    List<Role> findAllRole(SelectRole role);
+   List<Role> findAllRole(SelectRole role);
 }

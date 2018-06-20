@@ -6,7 +6,6 @@ import com.tianying.idms.pojo.select.SelectUser;
 import com.tianying.idms.service.IUserService;
 import org.springframework.stereotype.Service;
 
-
 import javax.annotation.Resource;
 import java.util.List;
 

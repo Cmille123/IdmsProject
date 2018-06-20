@@ -74,18 +74,20 @@ public class UserController {
 
     @RequestMapping("/userList.do")
     public ModelAndView list(HttpServletRequest req,@RequestParam(required = true, value = "page") int page,
-                                 @RequestParam(required = true, value = "pageSize") int pageSize){
+                                 @RequestParam(required = true, value = "pageSize") int pageSize) {
         List list = userService.findAllUser(new SelectUser());
-        List pageContext = PageUtil.getPageContext(page,pageSize,list);
-        req.setAttribute("uList",pageContext);
-        req.setAttribute("page",page);
-        req.setAttribute("pageCount",PageUtil.getPageCount(pageSize,list));
-        req.setAttribute("dataCount",list.size());
+        List pageContext = PageUtil.getPageContext(page, pageSize, list);
+        req.setAttribute("uList", pageContext);
+        req.setAttribute("page", page);
+        req.setAttribute("pageCount", PageUtil.getPageCount(pageSize, list));
+        req.setAttribute("dataCount", list.size());
         return new ModelAndView("main_list.jsp");
     }
 
-
-
-
+    @RequestMapping("/addUser.do")
+    public String addUser(User user){
+        userService.addUser(user);
+        return "redirect:/userList.do";
+    }
 
 }
