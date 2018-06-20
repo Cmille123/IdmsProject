@@ -34,7 +34,6 @@ public class SelectUser {
     private Date u_createTime;
     /**
      * 用户id数组
-
      */
     private Integer[] ids;
     /**

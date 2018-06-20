@@ -43,7 +43,7 @@
             </if>
         </where>
     </update>
-    <delete id="deleteUser" parameterType="com.tianying.idms.pojo.select.SelectUser">
+    <delete id="deleteUsers" parameterType="com.tianying.idms.pojo.select.SelectUser">
         DELETE FROM t_user WHERE u_id IN
         <foreach item="ids" collection="array" open="(" separator="," close=")">
             #{ids}

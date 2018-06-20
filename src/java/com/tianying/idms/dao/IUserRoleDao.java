@@ -20,7 +20,7 @@ public interface IUserRoleDao {
      * @param userRole 用户角色信息
      * @return 受影响的行数
      */
-    @Insert("insert into t_user_role(u_id,r_id) values(#{u_id,r_id})")
+    @Insert("insert into t_user_role(u_id,r_id) values(#{u_id},#{r_id})")
     int addUserRole(UserRole userRole);
 
     int deleteUserRole(UserRole userRole);
