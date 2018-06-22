@@ -74,31 +74,30 @@ public class UserController {
     }
 
     @RequestMapping("/userList.do")
-    public ModelAndView list(HttpServletRequest req,@RequestParam(required = true, value = "page") int page,
-                                 @RequestParam(required = true, value = "pageSize") int pageSize) {
+    public ModelAndView list(HttpServletRequest req,@RequestParam(required = true, value = "page") int page) {
         List list = userService.findAllUser(new SelectUser());
-        List pageContext = PageUtil.getPageContext(page, pageSize, list);
+        List pageContext = PageUtil.getPageContext(page, list);
         req.setAttribute("uList", pageContext);
         req.setAttribute("page", page);
-        req.setAttribute("pageCount", PageUtil.getPageCount(pageSize, list));
+        req.setAttribute("pageCount", PageUtil.getPageCount(list));
         req.setAttribute("dataCount", list.size());
         return new ModelAndView("main_list.jsp");
     }
 
     @RequestMapping("/addUser.do")
-    public String addUser(@RequestParam(required = true, value = "u_name") String u_name,
-            @RequestParam(required = true, value = "u_username") String u_username,
-            @RequestParam(required = true, value = "u_password") String u_password,
-            @RequestParam(required = true, value = "u_tell") String u_tell,
+    public String addUser(@RequestParam(required = true, value = "u_name") String name,
+            @RequestParam(required = true, value = "u_username") String username,
+            @RequestParam(required = true, value = "u_password") String password,
+            @RequestParam(required = true, value = "u_tell") String tell,
             HttpServletRequest req){
         User u = new User();
-        u.setU_name(u_name);
-        u.setU_username(u_username);
-        u.setU_password(u_password);
-        u.setU_tell(u_tell);
+        u.setU_name(name);
+        u.setU_username(username);
+        u.setU_password(password);
+        u.setU_tell(tell);
         u.setD_id(0);
         userService.addUser(u);
-        return "redirect:/userList.do?page=1&pageSize=2";
+        return "redirect:/userList.do?page=1";
     }
 
 

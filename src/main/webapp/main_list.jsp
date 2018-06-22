@@ -39,7 +39,7 @@
     </style>
     <script type="text/javascript">
         function paging(page) {
-            location.href="userList.do?page="+page+"&pageSize=2";
+            location.href="userList.do?page="+page;
         }
     </script>
 </head>

@@ -27,10 +27,9 @@ public class RoleController {
     @Resource(name="roleService")
     private IRoleService roleService;
     @RequestMapping("/roleList.do")
-    public ModelAndView list(HttpServletRequest req,@RequestParam(required = true, value = "page") int page,
-                             @RequestParam(required = true, value = "pageSize") int pageSize){
+    public ModelAndView list(HttpServletRequest req,@RequestParam(required = true, value = "page") int page){
         List list = roleService.findAllRole(new SelectRole());
-        List pageContext = PageUtil.getPageContext(page,pageSize,list);
+        List pageContext = PageUtil.getPageContext(page,list);
         for(Object obj:pageContext) {
             Role role = (Role)obj;
             System.out.println(role.getR_name());

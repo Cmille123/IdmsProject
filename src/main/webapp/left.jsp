@@ -14,7 +14,7 @@
 		myMenu.init();
 	};
     function userPage(page) {
-        parent.mainFrame.location.href="userList.do?page="+page+"&pageSize=2";
+        parent.mainFrame.location.href="userList.do?page="+page;
     }
 	// ]]>
 </script>

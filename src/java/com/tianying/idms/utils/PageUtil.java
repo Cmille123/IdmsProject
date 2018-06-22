@@ -12,12 +12,17 @@ import java.util.*;
  */
 public class PageUtil {
     /**
+     * 每页数据行数
+     */
+    private static final int PAGESIZE=2;
+
+    /**
      * 获取总页数
-     * @param pageSize 每页显示数据量
      * @param list 数据集合
      * @return 总页数
      */
-    public static int getPageCount(int pageSize,List list){
+    public static int getPageCount(List list){
+        int pageSize = PAGESIZE;
         int dataCount = list.size();
         return dataCount % pageSize == 0 ? dataCount / pageSize : dataCount / pageSize + 1;
     }
@@ -25,12 +30,12 @@ public class PageUtil {
     /**
      * 获取某页的所有数据
      * @param page 页面
-     * @param pageSize 每页显示数据量
      * @param list 数据集合
      * @return page页所有数据
      */
-    public static List getPageContext(int page,int pageSize,List list){
-        List pageContext = new ArrayList();
+    public static List getPageContext(int page,List<Object> list){
+        List<Object> pageContext = new ArrayList<Object>();
+        int pageSize = PAGESIZE;
         int dataCount = list.size();
         int pageCount = dataCount % pageSize == 0 ? dataCount / pageSize : dataCount / pageSize + 1;
         int startCount = (page-1)*pageSize+1;
