@@ -57,7 +57,6 @@ public class UserController {
                 e.printStackTrace();
             }
         }
-        System.out.println(user);
         return new ModelAndView("redirect:index.html");
     }
 

@@ -34,7 +34,6 @@ public class RoleController {
             Role role = (Role)obj;
             System.out.println(role.getR_name());
         }
-        //redirect:
         return new ModelAndView("login.html");
     }
 }
