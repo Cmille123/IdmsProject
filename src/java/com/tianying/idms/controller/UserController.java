@@ -5,7 +5,6 @@ import com.tianying.idms.pojo.select.SelectUser;
 import com.tianying.idms.service.IUserService;
 import com.tianying.idms.utils.PageUtil;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -81,7 +79,7 @@ public class UserController {
         req.setAttribute("page", page);
         req.setAttribute("pageCount", PageUtil.getPageCount(list));
         req.setAttribute("dataCount", list.size());
-        return new ModelAndView("main_list.jsp");
+        return new ModelAndView("user_list.jsp");
     }
 
     @RequestMapping("/addUser.do")
@@ -99,9 +97,4 @@ public class UserController {
         userService.addUser(u);
         return "redirect:/userList.do?page=1";
     }
-
-
-
-
-
 }
