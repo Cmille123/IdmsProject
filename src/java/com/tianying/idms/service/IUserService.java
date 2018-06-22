@@ -55,4 +55,5 @@ public interface IUserService {
      * @return 受影响的行数
      */
     boolean deleteUser(SelectUser selectUser);
+
 }

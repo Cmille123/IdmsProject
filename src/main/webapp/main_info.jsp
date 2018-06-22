@@ -52,31 +52,25 @@
                     <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
                         <td align="right" valign="middle" class="borderright borderbottom bggray">用户姓名：</td>
                         <td align="left" valign="middle" class="borderright borderbottom main-for">
-                            <input type="text" name="" value="" class="text-word">
+                            <input type="text" name="u_name" value="" class="text-word">
                         </td>
                     </tr>
                     <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
                         <td align="right" valign="middle" class="borderright borderbottom bggray">用户登录名：</td>
                         <td align="left" valign="middle" class="borderright borderbottom main-for">
-                            <input type="text" name="" value="" class="text-word">
+                            <input type="text" name="u_username" value="" class="text-word">
                         </td>
                     </tr>
                     <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
                         <td align="right" valign="middle" class="borderright borderbottom bggray">用户密码：</td>
                         <td align="left" valign="middle" class="borderright borderbottom main-for">
-                            <input type="text" name="" value="" class="text-word">
-                        </td>
-                    </tr>
-                    <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-                        <td align="right" valign="middle" class="borderright borderbottom bggray">注册时间：</td>
-                        <td align="left" valign="middle" class="borderright borderbottom main-for">
-                            <input type="text" name="" value="" class="text-word">
+                            <input type="password" name="u_password" value="" class="text-word">
                         </td>
                     </tr>
                     <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
                         <td align="right" valign="middle" class="borderright borderbottom bggray">联系方式：</td>
                         <td align="left" valign="middle" class="borderright borderbottom main-for">
-                            <input type="text" name="" value="" class="text-word">
+                            <input type="text" name="u_tell" value="" class="text-word">
                         </td>
                     </tr>
                     <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">

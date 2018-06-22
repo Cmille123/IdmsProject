@@ -54,4 +54,6 @@ public interface IUserDao {
      */
     @Delete("delete from t_user where u_id=#{u_id}")
     int deleteUser(SelectUser selectUser);
+
+
 }

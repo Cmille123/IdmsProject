@@ -60,7 +60,7 @@
                             <input name="" type="button" value="查询" class="text-but">
                         </form>
                     </td>
-                    <td width="10%" align="center" valign="middle" style="text-align:right; width:150px;"><a href="main_info.html" target="mainFrame" onFocus="this.blur()" class="add">新增管理员</a></td>
+                    <td width="10%" align="center" valign="middle" style="text-align:right; width:150px;"><a href="main_info.jsp" target="mainFrame" onFocus="this.blur()" class="add">新增管理员</a></td>
                 </tr>
             </table>
         </td>

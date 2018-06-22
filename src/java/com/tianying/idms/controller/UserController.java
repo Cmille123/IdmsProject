@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -85,9 +86,19 @@ public class UserController {
     }
 
     @RequestMapping("/addUser.do")
-    public String addUser(User user){
-        userService.addUser(user);
-        return "redirect:/userList.do";
+    public String addUser(@RequestParam(required = true, value = "u_name") String u_name,
+            @RequestParam(required = true, value = "u_username") String u_username,
+            @RequestParam(required = true, value = "u_password") String u_password,
+            @RequestParam(required = true, value = "u_tell") String u_tell,
+            HttpServletRequest req){
+        User u = new User();
+        u.setU_name(u_name);
+        u.setU_username(u_username);
+        u.setU_password(u_password);
+        u.setU_tell(u_tell);
+        u.setD_id(0);
+        userService.addUser(u);
+        return "redirect:/userList.do?page=1&pageSize=2";
     }
 
 }
