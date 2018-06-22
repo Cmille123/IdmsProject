@@ -61,6 +61,7 @@ public class UserController {
         return new ModelAndView("redirect:index.html");
     }
 
+
     /**
      * 登出
      * @return 返回页面
