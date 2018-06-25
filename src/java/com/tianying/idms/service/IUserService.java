@@ -56,4 +56,10 @@ public interface IUserService {
      */
     boolean deleteUser(SelectUser selectUser);
 
+    /**
+     * 根据id查询用户信息
+     * @param id 用户id
+     * @return 用户信息
+     */
+    User findUserById(int id);
 }

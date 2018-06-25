@@ -54,4 +54,12 @@ public class UserServiceImpl implements IUserService{
     public boolean deleteUser(SelectUser selectUser) {
         return userDao.deleteUser(selectUser)>0;
     }
+
+    @Override
+    public User findUserById(int id) {
+        SelectUser selectUser = new SelectUser();
+        selectUser.setU_id(id);
+        List<User> list = userDao.findUser(selectUser);
+        return list.size()>0?list.get(0):null;
+    }
 }

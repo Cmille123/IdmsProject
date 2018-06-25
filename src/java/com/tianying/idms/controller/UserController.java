@@ -31,7 +31,6 @@ public class UserController {
     @Resource(name="userService")
     private IUserService userService;
 
-    
     @RequestMapping("/login.do")
     public ModelAndView login(HttpServletRequest req, HttpServletResponse resp,
                               @RequestParam(required = true, value = "username") String username,
