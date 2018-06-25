@@ -90,7 +90,7 @@
                     <td align="center" valign="middle" class="borderright borderbottom"><%=u.getU_password()%></td>
                     <td align="center" valign="middle" class="borderright borderbottom"><%=u.getU_createTime()%></td>
                     <td align="center" valign="middle" class="borderright borderbottom"><%=u.getU_tell()%></td>
-                    <td align="center" valign="middle" class="borderbottom"><a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">编辑</a><span class="gray">&nbsp;|&nbsp;</span><a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">删除</a></td>
+                    <td align="center" valign="middle" class="borderbottom"><a href="user_edit.jsp" target="mainFrame" onFocus="this.blur()" class="add">编辑</a><span class="gray">&nbsp;|&nbsp;</span><a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">删除</a></td>
                 </tr>
                 <%
                         }

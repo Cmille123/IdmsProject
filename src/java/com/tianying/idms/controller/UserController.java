@@ -97,4 +97,17 @@ public class UserController {
         userService.addUser(u);
         return "redirect:/userList.do?page=1";
     }
+
+    @RequestMapping("/updateUser.do")
+    public String updateUser(){
+        return "userList.do?page=1";
+    }
+
+    public String deleteUser(@RequestParam(required = true, value = "u_id") int u_id,HttpServletRequest req){
+        SelectUser selectUser = new SelectUser();
+        selectUser.getU_id();
+        userService.deleteUser(selectUser);
+        return "userList.do?page=1";
+    }
+
 }
